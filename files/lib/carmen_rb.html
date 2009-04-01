@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: carmen.rb [carmen documentation]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>carmen.rb</h1>
+        <div class='paths'>
+          lib/carmen.rb
+          (<a href="http://github.com/jim/carmen/tree/master/lib/carmen.rb">view online</a>)
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Tue Mar 31 19:24:30 -0500 2009</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000002">country_code</a></li>
+              <li><a href="#M000003">country_codes</a></li>
+              <li><a href="#M000001">country_name</a></li>
+              <li><a href="#M000004">country_names</a></li>
+              <li><a href="#M000006">state_code</a></li>
+              <li><a href="#M000008">state_codes</a></li>
+              <li><a href="#M000005">state_name</a></li>
+              <li><a href="#M000007">state_names</a></li>
+              <li><a href="#M000009">states</a></li>
+            </ol>
+            <h3>protected class</h3>
+            <ol>
+              <li><a href="#M000010">search_collection</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+            <div id='requires'>
+              <h2>Required files</h2>
+              <ol>
+                <li>yaml</li>
+                <li>ftools</li>
+              </ol>
+            </div>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000002'>
+                <a name='M000002'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>country_code</span>
+                  <span class='arguments'>(country_name)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns the country code corresponding to the supplied country name
+                  </p>
+                  <pre>Carmen::country_code('Canada') =&gt; 'CA'</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000002-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 28</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">country_code</span>(<span class="ruby-identifier">country_name</span>)&#x000A;    <span class="ruby-identifier">search_collection</span>(<span class="ruby-constant">COUNTRIES</span>, <span class="ruby-identifier">country_name</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000003'>
+                <a name='M000003'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>country_codes</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an array of all country codes
+                  </p>
+                  <pre>Carmen::country_codes =&gt; ['AF', 'AX', 'AL', ... ]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000003-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 34</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">country_codes</span>&#x000A;    <span class="ruby-constant">COUNTRIES</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>[<span class="ruby-value">1</span>] }&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000001'>
+                <a name='M000001'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>country_name</span>
+                  <span class='arguments'>(country_code)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns the country name corresponding to the supplied country code
+                  </p>
+                  <pre>Carmen::country_name('TV') =&gt; 'Tuvalu'</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000001-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 22</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">country_name</span>(<span class="ruby-identifier">country_code</span>)&#x000A;    <span class="ruby-identifier">search_collection</span>(<span class="ruby-constant">COUNTRIES</span>, <span class="ruby-identifier">country_code</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000004'>
+                <a name='M000004'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>country_names</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an array of all country codes
+                  </p>
+                  <pre>Carmen::country_name =&gt; ['Afghanistan', 'Aland Islands', 'Albania', ... ]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000004-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 40</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">country_names</span>&#x000A;    <span class="ruby-constant">COUNTRIES</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>[<span class="ruby-value">0</span>] }&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000006'>
+                <a name='M000006'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>state_code</span>
+                  <span class='arguments'>(state_name, country_code = Carmen.default_country)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns the state code corresponding to the supplied state name within the
+                  specified country
+                  </p>
+                  <pre>Carmen::state_code('IL', 'US') =&gt; Illinois</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000006-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 52</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">state_code</span>(<span class="ruby-identifier">state_name</span>, <span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;    <span class="ruby-identifier">search_collection</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country_code</span>), <span class="ruby-identifier">state_name</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000008'>
+                <a name='M000008'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>state_codes</span>
+                  <span class='arguments'>(country_code = Carmen.default_country)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an array of state codes within the specified country code
+                  </p>
+                  <pre>Carmen::state_codes('US') =&gt; ['AL', 'AR', ... ]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000008-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 64</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">state_codes</span>(<span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country_code</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">code</span><span class="ruby-operator">|</span> <span class="ruby-identifier">code</span>}&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000005'>
+                <a name='M000005'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>state_name</span>
+                  <span class='arguments'>(state_code, country_code = Carmen.default_country)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns the state name corresponding to the supplied state code within the
+                  specified country
+                  </p>
+                  <pre>Carmen::state_code('New Hampshire') =&gt; 'NH'</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000005-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 46</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">state_name</span>(<span class="ruby-identifier">state_code</span>, <span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;    <span class="ruby-identifier">search_collection</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country_code</span>), <span class="ruby-identifier">state_code</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000007'>
+                <a name='M000007'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>state_names</span>
+                  <span class='arguments'>(country_code = Carmen.default_country)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an array of state names within the specified country code
+                  </p>
+                  <pre>Carmen::state_names('US') =&gt; ['Alabama', 'Arkansas', ... ]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000007-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 58</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">state_names</span>(<span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country_code</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">code</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>}&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000009'>
+                <a name='M000009'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>states</span>
+                  <span class='arguments'>(country_code = Carmen.default_country)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an array structure of state names and codes within the specified
+                  country code
+                  </p>
+                  <pre>Carmen::states('US') =&gt; [['Alabama', 'AL'], ['Arkansas', 'AR'], ... ]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000009-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 70</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;    <span class="ruby-identifier">search_collection</span>(<span class="ruby-constant">STATES</span>, <span class="ruby-identifier">country_code</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Protected class methods</h2>
+              <div class='protected-class method' id='method-M000010'>
+                <a name='M000010'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>search_collection</span>
+                  <span class='arguments'>(collection, value, index_to_match, index_to_retrieve)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000010-source'><span class="ruby-comment cmt"># File lib/carmen.rb, line 76</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">search_collection</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">index_to_match</span>, <span class="ruby-identifier">index_to_retrieve</span>)&#x000A;    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">nil?</span>&#x000A;    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">index_to_retrieve</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">index_to_match</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span>&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">nil</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
