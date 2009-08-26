@@ -46,37 +46,37 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000015">country_select</a></li>
-              <li><a href="#M000016">state_select</a></li>
+              <li><a href="#M000016">country_select</a></li>
+              <li><a href="#M000017">state_select</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000015'>
-                <a name='M000015'>      </a>
+              <div class='public-instance method' id='method-M000016'>
+                <a name='M000016'>      </a>
                 <div class='synopsis'>
                   <span class='name'>country_select</span>
                   <span class='arguments'>(method, priority_countries = nil, options = {}, html_options = {})</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 60</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">country_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 60</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">country_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000016'>
-                <a name='M000016'>      </a>
+              <div class='public-instance method' id='method-M000017'>
+                <a name='M000017'>      </a>
                 <div class='synopsis'>
                   <span class='name'>state_select</span>
                   <span class='arguments'>(method, country_code = Carmen.default_country, options = {}, html_options = {})</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 63</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">state_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">country_code</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000017-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 63</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">country_code</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">state_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">country_code</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

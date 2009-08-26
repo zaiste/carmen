@@ -46,37 +46,37 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000017">to_country_select_tag</a></li>
-              <li><a href="#M000018">to_state_select_tag</a></li>
+              <li><a href="#M000018">to_country_select_tag</a></li>
+              <li><a href="#M000019">to_state_select_tag</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000017'>
-                <a name='M000017'>      </a>
+              <div class='public-instance method' id='method-M000018'>
+                <a name='M000018'>      </a>
                 <div class='synopsis'>
                   <span class='name'>to_country_select_tag</span>
                   <span class='arguments'>(priority_countries, options, html_options)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000017-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 42</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_country_select_tag</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">html_options</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">stringify_keys</span>&#x000A;        <span class="ruby-identifier">add_default_name_and_id</span>(<span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>(<span class="ruby-identifier">object</span>)&#x000A;        <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">add_options</span>(<span class="ruby-identifier">country_options_for_select</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">priority_countries</span>), <span class="ruby-identifier">options</span>, <span class="ruby-identifier">value</span>)&#x000A;        <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;select&quot;</span>, <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000018-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 42</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_country_select_tag</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">html_options</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">stringify_keys</span>&#x000A;        <span class="ruby-identifier">add_default_name_and_id</span>(<span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>(<span class="ruby-identifier">object</span>)&#x000A;        <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">add_options</span>(<span class="ruby-identifier">country_options_for_select</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">priority_countries</span>), <span class="ruby-identifier">options</span>, <span class="ruby-identifier">value</span>)&#x000A;        <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;select&quot;</span>, <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000018'>
-                <a name='M000018'>      </a>
+              <div class='public-instance method' id='method-M000019'>
+                <a name='M000019'>      </a>
                 <div class='synopsis'>
                   <span class='name'>to_state_select_tag</span>
                   <span class='arguments'>(country, options, html_options)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000019-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000018-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 50</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_state_select_tag</span>(<span class="ruby-identifier">country</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">html_options</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">stringify_keys</span>&#x000A;        <span class="ruby-identifier">add_default_name_and_id</span>(<span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>(<span class="ruby-identifier">object</span>)&#x000A;        <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">add_options</span>(<span class="ruby-identifier">state_options_for_select</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">country</span>), <span class="ruby-identifier">options</span>, <span class="ruby-identifier">value</span>)&#x000A;        <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;select&quot;</span>, <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000019-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 50</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_state_select_tag</span>(<span class="ruby-identifier">country</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">html_options</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">stringify_keys</span>&#x000A;        <span class="ruby-identifier">add_default_name_and_id</span>(<span class="ruby-identifier">html_options</span>)&#x000A;        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>(<span class="ruby-identifier">object</span>)&#x000A;        <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">add_options</span>(<span class="ruby-identifier">state_options_for_select</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">country</span>), <span class="ruby-identifier">options</span>, <span class="ruby-identifier">value</span>)&#x000A;        <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;select&quot;</span>, <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

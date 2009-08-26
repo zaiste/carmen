@@ -42,17 +42,17 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000014">country_options_for_select</a></li>
-              <li><a href="#M000012">country_select</a></li>
-              <li><a href="#M000013">state_options_for_select</a></li>
-              <li><a href="#M000011">state_select</a></li>
+              <li><a href="#M000015">country_options_for_select</a></li>
+              <li><a href="#M000013">country_select</a></li>
+              <li><a href="#M000014">state_options_for_select</a></li>
+              <li><a href="#M000012">state_select</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000014'>
-                <a name='M000014'>      </a>
+              <div class='public-instance method' id='method-M000015'>
+                <a name='M000015'>      </a>
                 <div class='synopsis'>
                   <span class='name'>country_options_for_select</span>
                   <span class='arguments'>(selected = nil, *priority_country_codes)</span>
@@ -67,14 +67,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 24</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_options_for_select</span>(<span class="ruby-identifier">selected</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">priority_country_codes</span>)&#x000A;        <span class="ruby-identifier">country_options</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;&#x000A;        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">empty?</span>&#x000A;          <span class="ruby-identifier">priority_countries</span> = <span class="ruby-constant">Carmen</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNTRIES</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">country</span>, <span class="ruby-identifier">code</span><span class="ruby-operator">|</span>&#x000A;            <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">code</span>)&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;          <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">priority_countries</span>.<span class="ruby-identifier">empty?</span>&#x000A;            <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">options_for_select</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">selected</span>)&#x000A;            <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;&lt;option value=\&quot;\&quot; disabled=\&quot;disabled\&quot;&gt;-------------&lt;/option&gt;\n&quot;</span>&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;&#x000A;        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options_for_select</span>(<span class="ruby-constant">Carmen</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNTRIES</span>, <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">selected</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">selected</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 24</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_options_for_select</span>(<span class="ruby-identifier">selected</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">priority_country_codes</span>)&#x000A;        <span class="ruby-identifier">country_options</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;&#x000A;        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">empty?</span>&#x000A;          <span class="ruby-identifier">priority_countries</span> = <span class="ruby-constant">Carmen</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNTRIES</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">country</span>, <span class="ruby-identifier">code</span><span class="ruby-operator">|</span>&#x000A;            <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">code</span>)&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;          <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">priority_countries</span>.<span class="ruby-identifier">empty?</span>&#x000A;            <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">options_for_select</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">selected</span>)&#x000A;            <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;&lt;option value=\&quot;\&quot; disabled=\&quot;disabled\&quot;&gt;-------------&lt;/option&gt;\n&quot;</span>&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;&#x000A;        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">country_options</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options_for_select</span>(<span class="ruby-constant">Carmen</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNTRIES</span>, <span class="ruby-identifier">priority_country_codes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">selected</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">selected</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000012'>
-                <a name='M000012'>      </a>
+              <div class='public-instance method' id='method-M000013'>
+                <a name='M000013'>      </a>
                 <div class='synopsis'>
                   <span class='name'>country_select</span>
                   <span class='arguments'>(object, method, priority_countries = nil, options = {}, html_options = {})</span>
@@ -82,19 +82,19 @@
                 <div class='description'>
                   <p>
                   Return select and option tags for the given object and method, using <a
-                  href="FormOptionsHelper.html#M000014">country_options_for_select</a> to
+                  href="FormOptionsHelper.html#M000015">country_options_for_select</a> to
                   generate the list of option tags.
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000012-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 11</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-constant">InstanceTag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:object</span>)).<span class="ruby-identifier">to_country_select_tag</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 11</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">country_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})&#x000A;        <span class="ruby-constant">InstanceTag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:object</span>)).<span class="ruby-identifier">to_country_select_tag</span>(<span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000013'>
-                <a name='M000013'>      </a>
+              <div class='public-instance method' id='method-M000014'>
+                <a name='M000014'>      </a>
                 <div class='synopsis'>
                   <span class='name'>state_options_for_select</span>
                   <span class='arguments'>(selected = nil, country = Carmen.default_country)</span>
@@ -108,14 +108,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 17</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_options_for_select</span>(<span class="ruby-identifier">selected</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">country</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;        <span class="ruby-identifier">options_for_select</span>(<span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country</span>), <span class="ruby-identifier">selected</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 17</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_options_for_select</span>(<span class="ruby-identifier">selected</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">country</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>)&#x000A;        <span class="ruby-identifier">options_for_select</span>(<span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">states</span>(<span class="ruby-identifier">country</span>), <span class="ruby-identifier">selected</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000011'>
-                <a name='M000011'>      </a>
+              <div class='public-instance method' id='method-M000012'>
+                <a name='M000012'>      </a>
                 <div class='synopsis'>
                   <span class='name'>state_select</span>
                   <span class='arguments'>(object, method, country = Carmen.default_country, options={}, html_options={})</span>
@@ -123,15 +123,15 @@
                 <div class='description'>
                   <p>
                   Return select and option tags for the given object and method, using <a
-                  href="FormOptionsHelper.html#M000013">state_options_for_select</a> to
+                  href="FormOptionsHelper.html#M000014">state_options_for_select</a> to
                   generate the list of option tags.
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000011-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 6</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">country</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})&#x000A;        <span class="ruby-constant">InstanceTag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:object</span>)).<span class="ruby-identifier">to_state_select_tag</span>(<span class="ruby-identifier">country</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000012-source'><span class="ruby-comment cmt"># File lib/carmen/action_view_helpers.rb, line 6</span>&#x000A;      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">state_select</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">country</span> = <span class="ruby-constant">Carmen</span>.<span class="ruby-identifier">default_country</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-identifier">html_options</span>={})&#x000A;        <span class="ruby-constant">InstanceTag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:object</span>)).<span class="ruby-identifier">to_state_select_tag</span>(<span class="ruby-identifier">country</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">html_options</span>)&#x000A;      <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
