@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Carmen [carmen documentation]</title>
+    <title>: NonexistentCountry [carmen documentation]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -26,8 +26,8 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Module</span>
-          Carmen
+          <span class='type'>Class</span>
+          NonexistentCountry
         </h1>
         <ol class='paths'>
           <li>
@@ -35,39 +35,19 @@
             (<a href="http://github.com/jim/carmen/tree/master/lib/carmen.rb">view online</a>)
           </li>
         </ol>
+        <div class='parent'>
+          Parent:
+          <strong>RuntimeError</strong>
+        </div>
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='description'>
+            <p>
+            Raised when attempting to work with a country not in the data set
+            </p>
+          </div>
           <div id='section'>
-            <div id='constants-list'>
-              <h2>Constants</h2>
-              <div class='name-list'>
-                <table summary='Constants'>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>COUNTRIES</td>
-                    <td>=</td>
-                    <td class='context-item-value'>YAML.load_file(File.join(data_path, 'countries.yml'))</td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>STATES</td>
-                    <td>=</td>
-                    <td class='context-item-value'>Dir[data_path + '/states/*.yml'].map do |file_name|     [File::basename(file_name, '.yml').upcase, YAML.load_file(file_name)]</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-            <div id='attribute-list'>
-              <h2 class='section-bar'>Attributes</h2>
-              <div class='name-list'>
-                <table>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>default_country</td>
-                    <td class='context-item-value'>[RW]</td>
-                    <td class='context-item-desc'></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
           </div>
         </div>
       </div>
